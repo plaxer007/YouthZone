@@ -17,28 +17,41 @@
     <div class="container">
 
         <nav id="top-nav" class="top-nav">
+
             <div class="logo">
-                <a href="index.html" target='_blank'>
-                    <img src="images/logo.svg" alt="youth zone logo">
-                </a>
-            </div>
-            <div class="mobile">Menu</div>
+                <a href="index.html" >
+                <img src="images/logo.svg" alt="youth zone logo">
+            </a></div>
+        
             <div class="links">
-                <ul>
+                <ul class="menu-main">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="shop-now.html">Shop now</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="collection.html">Collection</a></li>
                     <li><a href="media.html">Media</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="cart.html" class="shop-cart-icon"><img src="images/cil_cart.svg"></a></li>
+                    <li>
+                        <a href="#" class="shop-cart-icon cart-btn">
+                            <img src="images/cil_cart.svg">
+                        </a>
+                        <div class="cart">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, quod.</p>
+                            <a href="cart.html">Go to full cart</a>
+                        </div>
+                    </li>
                     <li><a href="login.html" class="to-login">Login</a></li>
                 </ul>
+            </div>
+            <div class="mobile">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
             </div>
         </nav>
 
         <!-- Hero box -->
-        <div class="hero-wrapper flex-box">
+        <div class="hero-wrapper flex-box just-between">
 
             <div class="hero-content ">
                 <h1 class="header-1">
@@ -137,12 +150,14 @@
         <p class="cinzel center-txt">Newsletter list</p>
         <p class="center-txt nl-par">We send only content that matters. Youth mailing is no spam</p>
         <div class="nl-main flex-box">
-            <form action="" id="nl-form" class="nl-form">
-                <input type="text" placeholder="Your name">
-                <input type="email" placeholder="Your email">
+            <form action="/some" id="nl-form" class="nl-form">
+                <input type="text" placeholder="Your name" id="nl-name">
+                <input type="email" placeholder="Your email" id="nl-mail">
                 <button>Submit</button>
             </form>
         </div>
+        <p class="warn-msg"></p>
+        <p class="valid"></p>
         <p class="center-txt nl-note">By subscribe our mailing list, you accept our Privacy Policy.</p>
     </div>
 
@@ -201,5 +216,6 @@
     </footer>
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <script src="scripts/script.js"></script>
+    <script src="scripts/home.js"></script>
 </body>
 </html>
