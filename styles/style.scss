@@ -12,11 +12,12 @@ $white-txt: #fdfdfd;
     padding: 0;
 }
 body, html {
-    transition: all .3s ease-in-out;
+    transition: all .5s ease-in-out;
     width: 100%;
     height: 100%;
     font-size: 100%;
     font-family: 'Poppins', sans-serif;
+   
 }
 p, h1, h2, h3, h4, h5, h5, input, input::placeholder, 
 ul li, 
@@ -36,15 +37,19 @@ p {
     color: $nav-black;
     line-height: 200%;
 }
-
+body{
+    opacity: 0;
+}
 // Custom classes & JS classes
 .free-shipping {
     background-color: #f5cdcd;
     padding: 10px;
+    align-items: center;
 }
 .free-shipping p{ 
     text-align: center;
     font-size: 0.9rem;
+    
 }
 .plane {
     margin-right: 10px;
@@ -57,7 +62,7 @@ p#btnClose:hover{
     cursor: pointer;
 }
 #btnClose {
-    padding: 0px 6px;
+    align-items: center;
     font-size: 1rem;
     font-weight: 900;
     border-radius: 100%;
@@ -126,8 +131,9 @@ p#btnClose:hover{
     .top-nav,
     .links ul{
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+            justify-content: space-between;
+            position: relative;
+            align-items: center;
     }
     .top-nav {
         margin: 40px 0 80px 0;
@@ -152,7 +158,18 @@ p#btnClose:hover{
         border-radius: 23px;
         color: $darkgreen;
     }
-
+    //Shopping cart
+    .cart{
+        display: none;
+    }
+    .visible-cart{
+        width:300px;
+        background-color: brown;
+        display: block;
+        position: absolute;
+        top: 50px;
+        z-index: 99;
+    }
     // Site title
     .site-title {
         color: $darkgreen;
@@ -163,8 +180,6 @@ p#btnClose:hover{
 
     // Hero mainsite
     .hero-wrapper {
-        width:90%;
-        margin: auto;
         position: relative;
     }
     .hero-content {
@@ -177,9 +192,6 @@ p#btnClose:hover{
         top: 10%;
         
     }
-    // img {
-    //     filter: drop-shadow(0px 0px 5000px $darkgreen);
-    // }
     .hero-list{
         position: relative;
         margin-top: 54px;
@@ -209,7 +221,7 @@ p#btnClose:hover{
         text-align: center;
         color: $white-txt;
         position: relative;
-        z-index: 2222;
+        z-index: 150;
     }
     .hero-btn::before{
         content: '';
@@ -227,7 +239,9 @@ p#btnClose:hover{
     .hero-btn:focus {
         outline: none;
     }
-
+    .hero-image  {
+        overflow: hidden;
+    }
     //Section global custom width
     .section-global {
         width:100%;
@@ -272,24 +286,23 @@ p#btnClose:hover{
     }
     .section-btn:hover{
         color: $white-txt;
-        border-radius: 16px;
+        
     }
     // Fill in button class 
     .section-btn::before{
         content: '';
         position: absolute;
-        left:0;
-        bottom:0;
+        left:-1px;
+        top:0px;
         width: 0%;
-        height: 100%;
+        height: 101%;
         background-color: $darkgreen;
         z-index:0; 
         transition: all .3s ease;
     }
     .section-btn:hover::before {
-        width: 100%;
+        width:101%;
         z-index: -2;
-        border-radius: 12px;
     }
     // Section 2
     .section-2 {
@@ -305,7 +318,6 @@ p#btnClose:hover{
         position: relative;
     }
     .section-3 img{
-        filter: grayscale(0.2);
         position: absolute;
         bottom: 0%;
     }
@@ -358,6 +370,9 @@ p#btnClose:hover{
         display: inline-block;
         padding: 9px 39px;
     }
+    .nl-form button:hover {
+        cursor: pointer;
+    }
     .nl-form {
         margin: 20px auto 0px;
     }
@@ -397,20 +412,23 @@ p#btnClose:hover{
         margin: auto;
         line-height: 205%;
     }
-
+    .list {
+        min-width: 23%;
+    }
     .list li a{
         color: $nav-black;
-
     }
-    .list li a:hover{
-
+    .list li {
+        transition: all .3s ease;
+    }
+    .list li:hover {
+        margin-left: 3px;
     }
     .list .sm-icon {
-        text-align: center;
         margin-top: 5px;
     }
     
-    // login.html
+    // Login.html
     #form-wrapper {
         padding: 50px 0px 100px 0px;
         
@@ -461,7 +479,11 @@ p#btnClose:hover{
         height: 50%;
     }
 
-// Small devices (landscape phones, 576px and up)
+// RWD
+// RWD
+// RWD
+
+// Phones
 @media (max-width: 576px) {
     // Nav mobile
     .links{
@@ -469,9 +491,6 @@ p#btnClose:hover{
     }
     .mobile {
         display: block;
-    }
-    .show-links {
-
     }
     // Hero content
     .hero-wrapper,.hero-content {
@@ -503,14 +522,10 @@ p#btnClose:hover{
         padding: 0;
         width: 100%;
     }
-    .section-image img{
-        width: 100%;
-    }
-    .section-3 img {
-        bottom: 0;
-        left: 0;
+    .section-image img:not(.section-3 img) {
+        width: 100% !important;
         display: block;
-        z-index: -1;
+        margin: 30px auto;
     }
     // Footer
     .footer,.footer-main{
@@ -538,29 +553,107 @@ p#btnClose:hover{
     }
 }
 
-// Medium devices (tablets, 768px and up)
+// Medium : TABS
 @media (max-width: 768px) {
-    .mobile {
-        display: block;
-    }
-    .links {
-        display: none;
+    .shop-cart-icon{
+        width: 10%;
     }
 }
 
-// Large devices (desktops, 992px and up)
 @media (max-width: 992px) {
-    .mobile {
-        display: block;
+    // Mobile menu classes
+    .logo{
+        z-index: 201;
     }
-    .links {
+    .mobile{
+        display: block;
+        z-index: 999;
+    }
+    .links{
         display: none;
     }
-    
-}
+    .links{
+        width: 100vw;
+        position: absolute;
+        right:-12.5%;
+        height: 100vh;
+        top:-60%;
+        z-index: 200;
+        background-color: rgb(255, 253, 245);
+    }
+    .visible {
+        display: block !important;
+    }
+    .rotate1{
+        transform: rotate(45deg);
+        position: relative;
+        top:4px;
+        right:2px
+    }
+    .rotate3{
+        transform: rotate(-45deg);
+        position: relative;
+        bottom: 3px;
+        right: 3px;
+    }
+    .hide{
+        display: none ;
+    }
+    .links ul {
+        display: block;
+    }
+    .links ul li{
+        text-align: center;
+        padding: 20px ;
+        font-size: 20px;
+    }
+    .links ul li:first-child{
+        margin-top: 120px;
+    }
+    .shop-cart-icon{
+        width:38px;
+        margin: auto;
+    }
+    // Hamburger icon
+    .line{
+        width: 25px;
+        height: 2px;
+        background-color: black;
+        margin-bottom: 5px;
+        transition: all .3s ease;
+    }
+    // Footer
+    .link-list-wrapper {
+        width: 80%;
+        overflow: hidden;
+    }
 
-// Extra large devices (large desktops, 1200px and up)
+}
+// Small desktop
 @media (max-width: 1200px) {
-    
+    .section-content {
+        flex-flow: column wrap;
+    }
+    .section-content div {
+        width: 100%;
+        margin: 0;
+    }
+    .section-image img {
+        width: 60%;
+        display: block;
+        margin: 30px auto;
+    }
+    .section-3 img {
+        margin: auto;
+        display: block;
+        z-index: -1;
+        width:90%
+    }
+    .hero-content {
+        width: 100%
+    }
+    .hero-image {
+        display: none;
+    }
 }
 
