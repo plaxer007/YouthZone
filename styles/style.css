@@ -304,6 +304,64 @@ p#btnClose:hover {
 
 .hero-image {
   overflow: hidden;
+  position: relative;
+  width: 40%;
+}
+
+.hero-img {
+  width: 80%;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  border-radius: 100%;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+.layer {
+  position: absolute;
+  background-color: white;
+  width: 82%;
+  height: 100%;
+  -webkit-animation: layer 4s infinite;
+          animation: layer 4s infinite;
+  z-index: 999;
+  border-radius: 100%;
+}
+
+@-webkit-keyframes layer {
+  from {
+    top: 0;
+    opacity: .9;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+@keyframes layer {
+  from {
+    top: 0;
+    opacity: .9;
+  }
+  to {
+    top: 100%;
+  }
 }
 
 .section-global {
@@ -313,6 +371,13 @@ p#btnClose:hover {
 
 .section-image {
   width: 30%;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.section-image:not(.section-3 .section-image):hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .section-text {
@@ -433,6 +498,7 @@ p.cinzel {
   background-color: #ffffff00;
   border: 2px solid #fdfdfd;
   font-weight: 200;
+  font-size: 18px;
 }
 
 .nl-form input:focus,
@@ -575,7 +641,7 @@ p.nl-note {
 }
 
 .forms div:not(.line) {
-  margin-right: 10%;
+  margin-right: 5%;
 }
 
 .forms p {
@@ -604,7 +670,7 @@ p.nl-note {
   width: 1px;
   height: auto;
   background-color: #8f8f8f;
-  margin: 0px 60px 0px 40px;
+  margin: 0px 30px 0px 30px;
 }
 
 .security-note {
@@ -613,6 +679,8 @@ p.nl-note {
   border-radius: 8px;
   line-height: 200%;
   height: 50%;
+  margin-right: 0 !important;
+  min-width: 30%;
 }
 
 @media (max-width: 576px) {
@@ -620,7 +688,7 @@ p.nl-note {
     display: none;
   }
   .mobile {
-    display: block;
+    display: block  !important;
   }
   .hero-wrapper, .hero-content {
     width: 100%;
@@ -750,7 +818,7 @@ p.nl-note {
     width: 38px;
     margin: auto;
   }
-  .line {
+  .mob-line {
     width: 25px;
     height: 2px;
     background-color: black;
@@ -761,6 +829,16 @@ p.nl-note {
   .link-list-wrapper {
     width: 80%;
     overflow: hidden;
+  }
+  .forms div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: wrap row;
+            flex-flow: wrap row;
+    margin-bottom: 5%;
+  }
+  .security-note {
+    margin: 0px !important;
   }
 }
 
@@ -792,5 +870,25 @@ p.nl-note {
   .hero-image {
     display: none;
   }
+  .forms {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: wrap row;
+            flex-flow: wrap row;
+  }
+  .line {
+    display: none;
+  }
+}
+
+.input-group {
+  position: relative;
+}
+
+.invalid {
+  margin-top: 30px;
+  background-color: #FA5246;
+  color: #fdfdfd;
+  border-radius: 4px;
 }
 /*# sourceMappingURL=style.css.map */

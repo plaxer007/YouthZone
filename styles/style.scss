@@ -5,6 +5,10 @@ $nav-black:#161616;
 $darkgreen:#00332C;
 $yellow: #FAAE2B;
 $white-txt: #fdfdfd;
+$light-bg:rgb(253, 253, 243);
+$orange: #FA5246;
+$pink: #FFA8BA;
+$light-green: #475D5B;
 // CSS RESET & Default styles
 *, *::before, *::after {
     box-sizing: border-box;
@@ -117,7 +121,6 @@ p#btnClose:hover{
 .mobile{
     display: none;
 }
-
 
 // Global Styles
 
@@ -241,14 +244,53 @@ p#btnClose:hover{
     }
     .hero-image  {
         overflow: hidden;
+        position: relative;
+        width: 40%;
     }
+    .hero-img{
+        width:80%;
+        transition: all 1s ease;
+        border-radius: 100%;
+    }
+    // Slider with hero image
+    @keyframes slidein {
+        from{
+            left: -100px
+        }
+        to{
+            left: 0px;
+        }
+    }
+   .layer {
+       position: absolute;
+       background-color: white;
+       width: 82%;
+       height: 100%;
+       animation: layer 4s infinite ;
+       z-index: 999;
+       border-radius: 100%;
+   }
+   @keyframes layer{
+       from{
+        top:0;
+        opacity: .9;
+       }
+       to{
+        top: 100%;
+       }
+   }
+ 
     //Section global custom width
     .section-global {
         width:100%;
         padding-bottom: 100px
     }
    .section-image {
-       width:30%
+       width:30%;
+       transition: all .2s ease-in-out;
+   }
+   .section-image:not(.section-3 .section-image):hover{
+       transform: scale(1.1)
    }
    .section-text {
     width: 50%;
@@ -353,6 +395,7 @@ p#btnClose:hover{
         background-color: #ffffff00;
         border: 2px solid #fdfdfd;
         font-weight: 200;
+        font-size: 18px;
     }
     .nl-form input:focus,
     .nl-form button:focus {
@@ -446,7 +489,7 @@ p#btnClose:hover{
         
     }
     .forms div:not(.line){
-        margin-right: 10%;
+        margin-right: 5%;
     }
     .forms p{
         margin-bottom: 32px;
@@ -469,7 +512,7 @@ p#btnClose:hover{
         width:1px;
         height: auto;
         background-color: rgb(143, 143, 143);
-        margin: 0px 60px 0px 40px
+        margin: 0px 30px 0px 30px
     }
     .security-note {
         padding: 32px;
@@ -477,6 +520,8 @@ p#btnClose:hover{
         border-radius: 8px;
         line-height: 200%;
         height: 50%;
+        margin-right: 0 !important;
+        min-width: 30%
     }
 
 // RWD
@@ -490,7 +535,7 @@ p#btnClose:hover{
         display: none;
     }
     .mobile {
-        display: block;
+        display: block  !important;
     }
     // Hero content
     .hero-wrapper,.hero-content {
@@ -615,7 +660,7 @@ p#btnClose:hover{
         margin: auto;
     }
     // Hamburger icon
-    .line{
+    .mob-line{
         width: 25px;
         height: 2px;
         background-color: black;
@@ -627,7 +672,14 @@ p#btnClose:hover{
         width: 80%;
         overflow: hidden;
     }
-
+    // Login page RWD
+    .forms div{
+        flex-flow: wrap row;
+        margin-bottom: 5%;
+    }
+    .security-note{
+        margin: 0px !important;
+    }
 }
 // Small desktop
 @media (max-width: 1200px) {
@@ -655,5 +707,22 @@ p#btnClose:hover{
     .hero-image {
         display: none;
     }
+    // Login page RWD
+    .forms {
+        flex-flow: wrap row;
+    }
+    .line {
+        display: none;
+    }
 }
 
+
+.input-group {
+    position: relative;
+}
+.invalid {
+    margin-top: 30px;
+    background-color: #FA5246;
+    color: $white-txt;
+    border-radius: 4px;
+}

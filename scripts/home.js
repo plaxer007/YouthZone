@@ -1,11 +1,3 @@
-
-// Shopping cart
-let cart = document.querySelector('.cart');
-let cartBtn = document.querySelector('.cart-btn');
-
-cartBtn.addEventListener('click', function(){
-    cart.classList.toggle('visible-cart')
-})
 // Newsletter validation
 const nameInput = document.getElementById('nl-name');
 const mailInput = document.getElementById('nl-mail');

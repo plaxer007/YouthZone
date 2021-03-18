@@ -29,22 +29,35 @@
                 <li><a href="collection.html">Collection</a></li>
                 <li><a href="media.html">Media</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="cart.html" class="shop-cart-icon"><img src="images/cil_cart.svg"></a></li>
+                <li>
+                    <a href="#" class="shop-cart-icon cart-btn">
+                        <img src="images/cil_cart.svg">
+                    </a>
+                    <div class="cart">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, quod.</p>
+                        <a href="cart.html">Go to full cart</a>
+                    </div>
+                </li>                
                 <li><a href="login.html" class="to-login">Login</a></li>
             </ul>
+        </div>
+        <div class="mobile">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+            <div class="line line3"></div>
         </div>
     </nav>
     <h1 class="header-1 site-title">Come to <span class="yellow-span">YouthZone</span></h1>
     <!-- Login forms -->
     <div id="form-wrapper">
         
-        <div class="forms flex-box">
+        <div class="forms flex-box just-between">
             <div class="login-form">
 
                 <p>Already have account? Log-in!</p>
 
                 <div class="input-group">
-                    <form action="">
+                    <form action="" id='forms' method="POST">
                         <input type="text" name="log-login" id="log-login" placeholder="Login" required>
 
                         <input type="password" name="log-password" id="log-password" placeholder="Password" required>
@@ -66,9 +79,8 @@
                 <p>Create account</p>
 
                 <div class="input-group">
-                    <form action="">
+                    <form action="" id="form" method="POST">
                         <input type="text" name="reg-login" id="reg-login" placeholder="Login" required>
-
                         <input type="password" name="reg-password" id="reg-password" placeholder="Password" required>
     
                         <input type="email" name="reg-email" id="reg-email" placeholder="Your e-mail" required>
@@ -76,8 +88,9 @@
                         <label for="accept-privacy" class="privacy">
                             Accept Privacy Policy. Read more <a href="privacy-policy.html">here</a>.
                         </label>
+                        <p class="invalid"></p>
 
-                        <button class="green-btn">Submit</button>
+                        <button class="green-btn submit-btn">Submit</button>
                     </form>
                     
                 </div>
@@ -155,6 +168,7 @@
 </footer>
 
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script src="scripts/script.js"></script>
     <script src="scripts/login.js"></script>
 </body>
 </html>
