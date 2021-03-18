@@ -32,10 +32,10 @@ menuButton.addEventListener('click', function(){
 
 })
 
-// Shopping cart
-let cart = document.querySelector('.cart');
-let cartBtn = document.querySelector('.cart-btn');
+// // Shopping cart
+// let cart = document.querySelector('.cart');
+// let cartBtn = document.querySelector('.cart-btn');
 
-cartBtn.addEventListener('click', function(){
-    cart.classList.toggle('visible-cart')
-})
+// cartBtn.addEventListener('click', function(){
+//     cart.classList.toggle('visible-cart')
+// })
