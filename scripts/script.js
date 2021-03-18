@@ -32,31 +32,6 @@ menuButton.addEventListener('click', function(){
 
 })
 
-// Hero slider
-let slide = document.querySelector('.hero-image');
-let img = document.querySelector('.hero-img');
-let imgArr = [
-    'images/2.jpg',
-    'images/1.jpg',
-    'images/3.jpg'
-]
-let i = 0;
-
-function changeImage(){
-    img.src = imgArr[i];
-    if(i < imgArr.length - 1){
-        i++;
-        
-    }
-    else {
-        i = 0
-    }
-
-    setTimeout(changeImage, 4000);
-}
-changeImage()
-
-
 // Shopping cart
 let cart = document.querySelector('.cart');
 let cartBtn = document.querySelector('.cart-btn');
