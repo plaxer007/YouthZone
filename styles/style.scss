@@ -534,6 +534,9 @@ p#btnClose:hover{
     .links{
         display: none;
     }
+    .links ul li{
+        margin-left: 0;
+    }
     .mobile {
         display: block  !important;
     }
@@ -542,7 +545,7 @@ p#btnClose:hover{
         width: 100%;
     }
     .header-1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         display: block;
         width: 100%;
     }
@@ -621,7 +624,7 @@ p#btnClose:hover{
         width: 100vw;
         position: absolute;
         right:-12.5%;
-        height: 100vh;
+        height: 105vh;
         top:-60%;
         z-index: 200;
         background-color: rgb(255, 253, 245);
