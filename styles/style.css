@@ -727,6 +727,17 @@ p.nl-note {
     display: block;
     margin: 30px auto;
   }
+  .nl-form input {
+    width: 80%;
+    margin: 20px auto;
+  }
+  .nl-form button {
+    margin-left: 30px;
+  }
+  p.nl-note, .nl-par {
+    width: 95%;
+    margin: 20px auto;
+  }
   .footer, .footer-main {
     width: 100%;
     padding: 0;
