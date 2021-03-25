@@ -729,10 +729,11 @@ p.nl-note {
   }
   .nl-form input {
     width: 80%;
-    margin: 20px auto;
+    margin-top: 20px;
   }
-  .nl-form button {
-    margin-left: 30px;
+  .nl-form {
+    display: block;
+    margin-left: 17%;
   }
   p.nl-note, .nl-par {
     width: 95%;
