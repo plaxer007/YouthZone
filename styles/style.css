@@ -190,6 +190,26 @@ p#btnClose:hover {
 
 .links ul li {
   margin-left: 20px;
+  position: relative;
+  z-index: 0;
+}
+
+.links li::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #00332C;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  z-index: -1;
+}
+
+.links li:hover:not(.login-link, .shop-cart)::before {
+  width: 100%;
 }
 
 .shop-cart-icon {
@@ -214,15 +234,37 @@ p#btnClose:hover {
 
 .cart {
   display: none;
+  position: relative;
+  width: 0px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
 .visible-cart {
-  width: 300px;
-  background-color: brown;
+  width: 400px;
+  min-height: 200px;
+  background-color: #fbfbfb;
   display: block;
+  position: fixed;
+  top: 0px;
+  right: 0;
+  z-index: 123456789;
+  padding: 16px 16px 32px 16px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  -webkit-box-shadow: 2px 2px 8px rgba(51, 51, 51, 0.527);
+          box-shadow: 2px 2px 8px rgba(51, 51, 51, 0.527);
+}
+
+.close-cart {
+  display: block;
+  background-color: seagreen;
+  width: auto;
   position: absolute;
-  top: 50px;
-  z-index: 99;
+  right: 20px;
+  padding: 6px 12px;
+  border-radius: 50%;
+  color: #fdfdfd !important;
 }
 
 .site-title {
@@ -492,13 +534,13 @@ p.cinzel {
   color: #fdfdfd9f;
 }
 
-.nl-form input, button {
+.nl-form input, .nl-form button {
   display: block;
   color: #fdfdfd;
   background-color: #ffffff00;
   border: 2px solid #fdfdfd;
   font-weight: 200;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .nl-form input:focus,
@@ -752,7 +794,6 @@ p.nl-note {
     -webkit-box-flex: 40%;
         -ms-flex: 40%;
             flex: 40%;
-    /* explanation below */
     margin: 10px;
     font-size: 0.8rem;
   }
@@ -769,6 +810,9 @@ p.nl-note {
   }
   .footer-main .logo img {
     width: 70%;
+  }
+  .input-group input:not([type=checkbox]) {
+    padding: 10px 25px;
   }
 }
 
@@ -789,14 +833,17 @@ p.nl-note {
   .links {
     display: none;
   }
+  .links li:hover:not(.login-link, .shop-cart)::before {
+    width: 0%;
+  }
   .links {
     width: 100vw;
-    position: absolute;
-    right: -12.5%;
-    height: 105vh;
-    top: -60%;
+    position: fixed;
+    left: 0%;
+    height: 100vh;
+    top: 0%;
     z-index: 200;
-    background-color: #fffdf5;
+    background-color: rgba(255, 253, 245, 0.863);
   }
   .visible {
     display: block !important;
