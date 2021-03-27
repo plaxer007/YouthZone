@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800&display=swap");
+.shop-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 64px;
+}
+
+.sidebar {
+  width: 20%;
+  -webkit-box-shadow: 2px 2px 8px rgba(221, 220, 220, 0.65);
+          box-shadow: 2px 2px 8px rgba(221, 220, 220, 0.65);
+  padding: 16px 24px;
+}
+
+.products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: 75%;
+}
+
+.single-product {
+  width: 23%;
+  margin: 24px 8px 0 0;
+  -webkit-box-shadow: 2px 2px 8px rgba(221, 220, 220, 0.65);
+          box-shadow: 2px 2px 8px rgba(221, 220, 220, 0.65);
+  padding: 24px 36px;
+  height: auto;
+}
+
+.sp {
+  line-height: 35px;
+}
+
+.add-to-cart {
+  color: #00332C;
+  background-color: #fdfdfd;
+  border: 1px solid #00332C;
+  padding: 8px 16px;
+  margin-top: 16px;
+  font-weight: 500;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.add-to-cart:hover {
+  cursor: pointer;
+}
+
+.add-to-cart p {
+  overflow: hidden;
+}
+
+.add-to-cart:active,
+.add-to-cart:focus {
+  font-size: 0.8em;
+  background-color: #00332C;
+  color: #fdfdfd;
+}
+
+.checkout-btn {
+  position: absolute;
+  bottom: 10px;
+}
+
+.product-image {
+  width: 100%;
+  margin: 24px auto;
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .products {
+    width: 100%;
+  }
+  .single-product {
+    width: 30%;
+    margin: 24px auto;
+    height: auto;
+  }
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .single-product {
+    width: 100%;
+    margin: 24px auto;
+    height: auto;
+  }
+}
+/*# sourceMappingURL=products.css.map */

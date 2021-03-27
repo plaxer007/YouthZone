@@ -5,6 +5,10 @@ $nav-black:#161616;
 $darkgreen:#00332C;
 $yellow: #FAAE2B;
 $white-txt: #fdfdfd;
+$light-bg:rgb(253, 253, 243);
+$orange: #FA5246;
+$pink: #FFA8BA;
+$light-green: #475D5B;
 // CSS RESET & Default styles
 *, *::before, *::after {
     box-sizing: border-box;
@@ -12,11 +16,12 @@ $white-txt: #fdfdfd;
     padding: 0;
 }
 body, html {
-    transition: all .3s ease-in-out;
+    transition: all .5s ease-in-out;
     width: 100%;
     height: 100%;
     font-size: 100%;
     font-family: 'Poppins', sans-serif;
+   
 }
 p, h1, h2, h3, h4, h5, h5, input, input::placeholder, 
 ul li, 
@@ -36,15 +41,19 @@ p {
     color: $nav-black;
     line-height: 200%;
 }
-
+body{
+    opacity: 0;
+}
 // Custom classes & JS classes
 .free-shipping {
     background-color: #f5cdcd;
     padding: 10px;
+    align-items: center;
 }
 .free-shipping p{ 
     text-align: center;
     font-size: 0.9rem;
+    
 }
 .plane {
     margin-right: 10px;
@@ -57,7 +66,7 @@ p#btnClose:hover{
     cursor: pointer;
 }
 #btnClose {
-    padding: 0px 6px;
+    align-items: center;
     font-size: 1rem;
     font-weight: 900;
     border-radius: 100%;
@@ -126,8 +135,9 @@ p#btnClose:hover{
     .top-nav,
     .links ul{
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+            justify-content: space-between;
+            position: relative;
+            align-items: center;
     }
     .top-nav {
         margin: 40px 0 80px 0;
@@ -137,7 +147,26 @@ p#btnClose:hover{
     }
     .links ul li{
         margin-left: 20px;
+        position:relative;
+        z-index: 0;
     }
+    .links li::before{
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: $darkgreen;
+        transition: all .3s ease;
+        z-index: -1;
+        
+    }
+    .links li:hover:not(.login-link, .shop-cart)::before{
+        width: 100%;
+    }
+    
     .shop-cart-icon {
         background-color: $darkgreen;
         display: flex;
@@ -152,7 +181,36 @@ p#btnClose:hover{
         border-radius: 23px;
         color: $darkgreen;
     }
-
+    //Shopping cart
+    .cart{
+        display: none;
+        position: relative;
+        width:0px;
+        transition: all .5s ease;
+    }
+    .visible-cart{
+        width:400px;
+        min-height: 200px;
+        background-color: rgb(251, 251, 251);
+        display: block;
+        position: fixed;
+        top: 0px;
+        right:0;
+        z-index: 123456789;
+        padding: 16px 16px 32px 16px;
+        transition: all .5s ease;
+        box-shadow: 2px 2px 8px rgba(51, 51, 51, 0.527);
+    }
+    .close-cart{
+        display: block;
+        background-color: seagreen;
+        width: auto;
+        position: absolute;
+        right:20px;
+        padding:6px 12px;
+        border-radius: 50%;
+        color: $white-txt !important;
+    }
     // Site title
     .site-title {
         color: $darkgreen;
@@ -163,8 +221,6 @@ p#btnClose:hover{
 
     // Hero mainsite
     .hero-wrapper {
-        width:90%;
-        margin: auto;
         position: relative;
     }
     .hero-content {
@@ -177,9 +233,6 @@ p#btnClose:hover{
         top: 10%;
         
     }
-    // img {
-    //     filter: drop-shadow(0px 0px 5000px $darkgreen);
-    // }
     .hero-list{
         position: relative;
         margin-top: 54px;
@@ -209,7 +262,7 @@ p#btnClose:hover{
         text-align: center;
         color: $white-txt;
         position: relative;
-        z-index: 2222;
+        z-index: 150;
     }
     .hero-btn::before{
         content: '';
@@ -227,14 +280,55 @@ p#btnClose:hover{
     .hero-btn:focus {
         outline: none;
     }
-
+    .hero-image  {
+        overflow: hidden;
+        position: relative;
+        width: 40%;
+    }
+    .hero-img{
+        width:80%;
+        transition: all 1s ease;
+        border-radius: 100%;
+    }
+    // Slider with hero image
+    @keyframes slidein {
+        from{
+            left: -100px
+        }
+        to{
+            left: 0px;
+        }
+    }
+   .layer {
+       position: absolute;
+       background-color: white;
+       width: 82%;
+       height: 100%;
+       animation: layer 4s infinite ;
+       z-index: 999;
+       border-radius: 100%;
+   }
+   @keyframes layer{
+       from{
+        top:0;
+        opacity: .9;
+       }
+       to{
+        top: 100%;
+       }
+   }
+ 
     //Section global custom width
     .section-global {
         width:100%;
         padding-bottom: 100px
     }
    .section-image {
-       width:30%
+       width:30%;
+       transition: all .2s ease-in-out;
+   }
+   .section-image:not(.section-3 .section-image):hover{
+       transform: scale(1.1)
    }
    .section-text {
     width: 50%;
@@ -272,24 +366,23 @@ p#btnClose:hover{
     }
     .section-btn:hover{
         color: $white-txt;
-        border-radius: 16px;
+        
     }
     // Fill in button class 
     .section-btn::before{
         content: '';
         position: absolute;
-        left:0;
-        bottom:0;
+        left:-1px;
+        top:0px;
         width: 0%;
-        height: 100%;
+        height: 101%;
         background-color: $darkgreen;
         z-index:0; 
         transition: all .3s ease;
     }
     .section-btn:hover::before {
-        width: 100%;
+        width:101%;
         z-index: -2;
-        border-radius: 12px;
     }
     // Section 2
     .section-2 {
@@ -305,7 +398,6 @@ p#btnClose:hover{
         position: relative;
     }
     .section-3 img{
-        filter: grayscale(0.2);
         position: absolute;
         bottom: 0%;
     }
@@ -335,12 +427,13 @@ p#btnClose:hover{
         margin: 20px auto;
         color: #fdfdfd9f
     }
-    .nl-form input,button{
+    .nl-form input, .nl-form button{
         display: block;
         color: $white-txt;
         background-color: #ffffff00;
         border: 2px solid #fdfdfd;
         font-weight: 200;
+        font-size: 16px;
     }
     .nl-form input:focus,
     .nl-form button:focus {
@@ -357,6 +450,9 @@ p#btnClose:hover{
     .nl-form button {
         display: inline-block;
         padding: 9px 39px;
+    }
+    .nl-form button:hover {
+        cursor: pointer;
     }
     .nl-form {
         margin: 20px auto 0px;
@@ -397,20 +493,23 @@ p#btnClose:hover{
         margin: auto;
         line-height: 205%;
     }
-
+    .list {
+        min-width: 23%;
+    }
     .list li a{
         color: $nav-black;
-
     }
-    .list li a:hover{
-
+    .list li {
+        transition: all .3s ease;
+    }
+    .list li:hover {
+        margin-left: 3px;
     }
     .list .sm-icon {
-        text-align: center;
         margin-top: 5px;
     }
     
-    // login.html
+    // Login.html
     #form-wrapper {
         padding: 50px 0px 100px 0px;
         
@@ -428,7 +527,7 @@ p#btnClose:hover{
         
     }
     .forms div:not(.line){
-        margin-right: 10%;
+        margin-right: 5%;
     }
     .forms p{
         margin-bottom: 32px;
@@ -451,7 +550,7 @@ p#btnClose:hover{
         width:1px;
         height: auto;
         background-color: rgb(143, 143, 143);
-        margin: 0px 60px 0px 40px
+        margin: 0px 30px 0px 30px
     }
     .security-note {
         padding: 32px;
@@ -459,26 +558,32 @@ p#btnClose:hover{
         border-radius: 8px;
         line-height: 200%;
         height: 50%;
+        margin-right: 0 !important;
+        min-width: 30%
     }
 
-// Small devices (landscape phones, 576px and up)
+// RWD
+// RWD
+// RWD
+
+// Phones
 @media (max-width: 576px) {
     // Nav mobile
     .links{
         display: none;
     }
-    .mobile {
-        display: block;
+    .links ul li{
+        margin-left: 0;
     }
-    .show-links {
-
+    .mobile {
+        display: block  !important;
     }
     // Hero content
     .hero-wrapper,.hero-content {
         width: 100%;
     }
     .header-1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         display: block;
         width: 100%;
     }
@@ -503,14 +608,22 @@ p#btnClose:hover{
         padding: 0;
         width: 100%;
     }
-    .section-image img{
-        width: 100%;
-    }
-    .section-3 img {
-        bottom: 0;
-        left: 0;
+    .section-image img:not(.section-3 img) {
+        width: 100% !important;
         display: block;
-        z-index: -1;
+        margin: 30px auto;
+    }
+    .nl-form input {
+        width: 80%;
+        margin-top: 20px;
+    }
+    .nl-form {
+        display: block;
+        margin-left: 17%;
+    }
+    p.nl-note,.nl-par{
+        width: 95%;
+        margin: 20px auto;
     }
     // Footer
     .footer,.footer-main{
@@ -522,7 +635,7 @@ p#btnClose:hover{
         width: 95%;
     }
     .list {
-        flex:40%; /* explanation below */
+        flex:40%;
         margin: 10px;
         font-size: 0.8rem;
     }
@@ -536,31 +649,143 @@ p#btnClose:hover{
     .footer-main .logo img {
         width: 70%
     }
+
+    // Login
+    .input-group input:not([type=checkbox]){
+        padding: 10px 25px;
+    }
 }
 
-// Medium devices (tablets, 768px and up)
+// Medium : TABS
 @media (max-width: 768px) {
-    .mobile {
-        display: block;
-    }
-    .links {
-        display: none;
+    .shop-cart-icon{
+        width: 10%;
     }
 }
 
-// Large devices (desktops, 992px and up)
 @media (max-width: 992px) {
-    .mobile {
-        display: block;
+    // Mobile menu classes
+    .logo{
+        z-index: 201;
     }
-    .links {
+    .mobile{
+        display: block;
+        z-index: 999;
+
+    }
+    
+    .links{
         display: none;
     }
-    
+    .links li:hover:not(.login-link, .shop-cart)::before{
+        width: 0%;
+    }
+    .links{
+        width: 100vw;
+        position: fixed;
+        left:0%;
+        height: 100vh;
+        top:0%;
+        z-index: 200;
+        background-color: rgba(255, 253, 245, 0.863);
+    }
+    .visible {
+        display: block !important;
+    }
+    .rotate1{
+        transform: rotate(45deg);
+        position: relative;
+        top:4px;
+        right:2px
+    }
+    .rotate3{
+        transform: rotate(-45deg);
+        position: relative;
+        bottom: 3px;
+        right: 3px;
+    }
+    .hide{
+        display: none ;
+    }
+    .links ul {
+        display: block;
+    }
+    .links ul li{
+        text-align: center;
+        padding: 20px ;
+        font-size: 20px;
+    }
+    .links ul li:first-child{
+        margin-top: 120px;
+    }
+    .shop-cart-icon{
+        width:38px;
+        margin: auto;
+    }
+    // Hamburger icon
+    .mob-line{
+        width: 25px;
+        height: 2px;
+        background-color: black;
+        margin-bottom: 5px;
+        transition: all .3s ease;
+    }
+    // Footer
+    .link-list-wrapper {
+        width: 80%;
+        overflow: hidden;
+    }
+    // Login page RWD
+    .forms div{
+        flex-flow: wrap row;
+        margin-bottom: 5%;
+    }
+    .security-note{
+        margin: 0px !important;
+    }
 }
-
-// Extra large devices (large desktops, 1200px and up)
+// Small desktop
 @media (max-width: 1200px) {
-    
+    .section-content {
+        flex-flow: column wrap;
+    }
+    .section-content div {
+        width: 100%;
+        margin: 0;
+    }
+    .section-image img {
+        width: 60%;
+        display: block;
+        margin: 30px auto;
+    }
+    .section-3 img {
+        margin: auto;
+        display: block;
+        z-index: -1;
+        width:90%
+    }
+    .hero-content {
+        width: 100%
+    }
+    .hero-image {
+        display: none;
+    }
+    // Login page RWD
+    .forms {
+        flex-flow: wrap row;
+    }
+    .line {
+        display: none;
+    }
 }
 
+
+.input-group {
+    position: relative;
+}
+.invalid {
+    margin-top: 30px;
+    background-color: #FA5246;
+    color: $white-txt;
+    border-radius: 4px;
+}
