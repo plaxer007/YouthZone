@@ -88,7 +88,10 @@ function addToCart(){
             cartWrapper.append(newItem);
             items.push(newItem);
             newItem.style.display = 'flex'
-            newItem.style.alignItems = 'center'
+            newItem.style.alignItems = 'center';
+            // Display total price in cart
+            total = total + prodNamesPrices[i].price;
+            totalPrice.textContent = `Total: ${total}$`;
 
             // Toggle off/on btn after add to cart
             cartBtn[i].classList.add('disabled');
@@ -103,11 +106,13 @@ function addToCart(){
             let minus = document.createTextNode('-');
             let qtyAll = document.createElement('p');
             let qtyAllNum = document.createTextNode('1');
+
             qtyAll.append(qtyAllNum);
             qtyPlus.append(plus);
             qtyMinus.append(minus);
             qtySet.append(qtyPlus,qtyAll,qtyMinus);
             newItem.append(qtySet)
+
             let qtyCount = 1;
             qtyPlus.addEventListener('click', () => {
                 qtyCount++;
@@ -147,9 +152,7 @@ function addToCart(){
             itemInCart++;
             itemCounter.textContent = itemInCart;
 
-            // Display total price in cart
-            total = prodNamesPrices[i].price + total;
-            totalPrice.textContent = `Total: ${total}$`;
+            
             emptyCart.textContent = ''
 
             // Delete item from cart, update price and counter
@@ -159,7 +162,7 @@ function addToCart(){
                 newItem.style.display = 'none'
                 itemInCart--;
                 itemCounter.textContent = itemInCart;
-                total = total - prodNamesPrices[i].price;
+                total =total - (prodNamesPrices[i].price * qtyCount);
                 totalPrice.textContent = `Total: ${total}$`;
                 cartBtn[i].classList.remove('disabled');
                 cartBtn[i].disabled = false;

@@ -16,35 +16,49 @@
 <div class="container">
     <!-- Navbar -->
     <nav id="top-nav" class="top-nav">
+
         <div class="logo">
-            <a href="index.html">
-                <img src="images/logo.svg" alt="youth zone logo">
-            </a>
+            <a href="index.html" >
+            <img src="images/logo.svg" alt="youth zone logo">
+        </a>
         </div>
+    
         <div class="links">
-            <ul>
+            <ul class="menu-main">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="shop-now.html">Shop now</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="collection.html">Collection</a></li>
                 <li><a href="media.html">Media</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li>
+                <li class="shop-cart">
                     <a href="#" class="shop-cart-icon cart-btn">
                         <img src="images/cil_cart.svg">
                     </a>
                     <div class="cart">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, quod.</p>
-                        <a href="cart.html">Go to full cart</a>
+                        <a href="#" class="close-cart">X</a>
+                        <div class="cart-details">
+                            <p>In cart:</p>
+                            <div class="cart-empty">You don't have products in cart.</div>
+                            <a href="cart.html" class="checkout-btn">Checkout >>></a>
+                        </div>
                     </div>
-                </li>                
-                <li><a href="login.html" class="to-login">Login</a></li>
+                </li>
+                <li class="login-link"><a href="login.html" class="to-login">Login</a></li>
             </ul>
         </div>
         <div class="mobile">
-            <div class="line line1"></div>
-            <div class="line line2"></div>
-            <div class="line line3"></div>
+            <div class="mob-line line1"></div>
+            <div class="mob-line line2"></div>
+            <div class="mob-line line3"></div>
+        </div>
+        <div class="cart">
+            <a href="#" class="close-cart">X</a>
+            <div class="cart-details">
+                <p>In cart:</p>
+                <p class="cart-product-current"></p>
+                <a href="cart.html">Go to full cart</a>
+            </div>
         </div>
     </nav>
     <h1 class="header-1 site-title">Come to <span class="yellow-span">YouthZone</span></h1>
