@@ -31,11 +31,22 @@
                     <li><a href="media.html">Media</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li class="shop-cart">
-                        <li class="shop-cart">
+                            <div class="item-counter"></div>
                             <a href="#" class="shop-cart-icon cart-btn">
                                 <img src="images/cil_cart.svg">
                             </a>
-                        </li>
+                            <div class="cart">
+                                <a href="#" class="close-cart">X</a>
+                                <div class="cart-details">
+                                    <p>In cart:</p>
+                                    <div class="cart-empty">You don't have products in cart.</div>
+                                    <div class="summary">
+                                        <p class="total">Total: 0$</p>
+                                        <a href="cart.html" class="checkout-btn">Checkout >>></a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
                     </li>
                     <li class="login-link"><a href="login.html" class="to-login">Login</a></li>
                 </ul>
@@ -45,14 +56,7 @@
                 <div class="mob-line line2"></div>
                 <div class="mob-line line3"></div>
             </div>
-            <div class="cart">
-                <a href="#" class="close-cart">X</a>
-                <div class="cart-details">
-                    <p>In cart:</p>
-                    <div class="cart-empty">You don't have products in cart.</div>
-                    <a href="cart.html" class="checkout-btn">Checkout</a>
-                </div>
-            </div>
+            
         </nav>
         <!-- End container -->
 
@@ -64,33 +68,32 @@
                 <p>Sort by</p>
 
                 <li>Price</li>
+                0
                 <input type="range" name="" id="">
-
+                999
                 <li>Type</li>
                 <select name="" id="">
-                    <option value="">One</option>
-                    <option value="">Two</option>
-                    <option value="">Three</option>
+                    <option value="">Lipstick</option>
+                    <option value="">Powder</option>
+                    <option value="">Cream</option>
                 </select>
 
-                <li>
-                    Skin types
-                    <ul>
-                        <li><a href="#">option</a></li>
-                        <li><a href="#">option</a></li>
-                        <li><a href="#">option</a></li>
-                    </ul>
-                </li>
+                <li>Skin types</li>
+                <select name="" id="">
+                    <option value="">Oil skin</option>
+                    <option value="">Dry skin</option>
+                    <option value="">Weak skin</option>
+                </select>
                 <li>Color</li>
-                <ul style="display: flex; justify-content: space-around;">
-                    <div class="color" style="border-radius: 50%; width: 20px; height: 20px; background-color: blue;"></div>
-                    <div class="color" style="border-radius: 50%; width: 20px; height: 20px; background-color: yellowgreen;"></div>
-                    <div class="color" style="border-radius: 50%; width: 20px; height: 20px; background-color: blueviolet;"></div>
-                    <div class="color" style="border-radius: 50%; width: 20px; height: 20px; background-color: saddlebrown;"></div>
-                    <div class="color" style="border-radius: 50%; width: 20px; height: 20px; background-color: wheat;"></div>
-                    <div class="color" style="border-radius: 50%; width: 20px; height: 20px; background-color: rebeccapurple;"></div>
+                <ul class="color-filter-list">
+                    <li class="color-opt color-red"></li>
+                    <li class="color-opt color-green"></li>
+                    <li class="color-opt color-blue"></li>
+                    <li class="color-opt color-orange"></li>
+                    <li class="color-opt color-yellow"></li>
                 </ul>
                 <li></li>
+                <button class="filters-btn">Apply filters</button>
             </ul>
         </div>
         <!-- Products container -->
