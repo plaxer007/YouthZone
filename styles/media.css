@@ -66,6 +66,10 @@
   margin-top: 24px;
 }
 
+.info-card p {
+  font-size: 0.95em;
+}
+
 .youth-logo {
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
@@ -88,6 +92,22 @@
 @media (max-width: 576px) {
   .single-card {
     width: 100% !important;
+  }
+  .info-card p {
+    font-size: 0.85em;
+  }
+}
+
+@media (max-width: 992px) {
+  .youth-logo {
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+  }
+  .single-card {
+    width: 45%;
+  }
+  .info-card p {
+    font-size: 0.95em;
   }
 }
 /*# sourceMappingURL=media.css.map */
