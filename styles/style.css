@@ -908,6 +908,10 @@ p.nl-note {
     display: block;
     z-index: 999;
   }
+  .visible-cart {
+    position: relative;
+    top: 20px;
+  }
   .links {
     display: none;
   }
@@ -952,7 +956,7 @@ p.nl-note {
     font-size: 20px;
   }
   .links ul li:first-child {
-    margin-top: 120px;
+    margin-top: 50%;
   }
   .shop-cart-icon {
     width: 38px;

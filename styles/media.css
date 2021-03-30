@@ -84,4 +84,10 @@
   height: 99%;
   border-radius: 25px;
 }
+
+@media (max-width: 576px) {
+  .single-card {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=media.css.map */

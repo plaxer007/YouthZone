@@ -160,8 +160,7 @@ p#btnClose:hover{
         height: 2px;
         background-color: $darkgreen;
         transition: all .3s ease;
-        z-index: -1;
-        
+        z-index: -1; 
     }
     .links li:hover:not(.login-link, .shop-cart)::before{
         width: 100% !important;
@@ -743,7 +742,10 @@ p#btnClose:hover{
         z-index: 999;
 
     }
-    
+    .visible-cart{
+        position: relative;
+        top: 20px
+    }
     .links{
         display: none;
     }
@@ -786,7 +788,7 @@ p#btnClose:hover{
         font-size: 20px;
     }
     .links ul li:first-child{
-        margin-top: 120px;
+        margin-top: 50%;
     }
     .shop-cart-icon{
         width:38px;
