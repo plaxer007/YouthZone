@@ -911,7 +911,7 @@ p.nl-note {
   .visible-cart {
     position: relative;
     bottom: 100px;
-    left: -20px;
+    width: 100%;
   }
   .hide-mobile {
     display: none;
