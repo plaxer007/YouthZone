@@ -739,12 +739,16 @@ p#btnClose:hover{
     }
     .mobile{
         display: block;
-        z-index: 999;
+        z-index: 999 !important;
 
     }
     .visible-cart{
         position: relative;
-        top: 20px
+        bottom: 100px;
+        left: -20px;
+    }
+    .hide-mobile {
+        display: none;
     }
     .links{
         display: none;
@@ -758,7 +762,7 @@ p#btnClose:hover{
         left:0%;
         height: 100vh;
         top:0%;
-        z-index: 200;
+        z-index: 333;
         background-color: rgba(255, 253, 245, 0.863);
     }
     .visible {
