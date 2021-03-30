@@ -50,15 +50,10 @@ $light-green: #475D5B;
 .add-to-cart p{
     overflow: hidden;
 }
-// .add-to-cart:active,
-// .add-to-cart:focus{
-//     font-size: 0.8em;
-//     background-color: $darkgreen;
-//     color: $white-txt;
-// }
+
 .disabled {
-    background-color: #ddd;
-    color: #333;
+    background-color: #00332c54;
+    color: $nav-black;
 }
 .product-image {
     width: 100%;

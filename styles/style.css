@@ -318,6 +318,31 @@ a.closer {
   position: absolute;
   right: 5%;
   cursor: pointer;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+a.closer::after {
+  content: 'Delete from cart';
+  width: 0px;
+  height: 100%;
+  background-color: #FA5246;
+  color: #fdfdfd;
+  font-size: 10px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 150%;
+  text-align: center;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  opacity: 0;
+  border-radius: 25px;
+}
+
+a.closer:hover::after {
+  width: 100px;
+  opacity: 1;
 }
 
 .site-title {

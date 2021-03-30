@@ -78,7 +78,7 @@ function addToCart(){
     let items = [];
     
     // Add item, delete ite, price update, counter update
-    for(let i =0; i<cartBtn.length; i++){
+    for(let i = 0; i < cartBtn.length; i++){
         cartBtn[i].addEventListener('click', (e) => {
             // Add item to cart and push to array 'items'
             let newItem = document.createElement('p');
@@ -87,7 +87,7 @@ function addToCart(){
             newItem.append(itemDetails);
             cartWrapper.append(newItem);
             items.push(newItem);
-            newItem.style.display = 'flex'
+            newItem.style.display = 'flex';
             newItem.style.alignItems = 'center';
             // Display total price in cart
             total = total + prodNamesPrices[i].price;
@@ -97,7 +97,8 @@ function addToCart(){
             cartBtn[i].classList.add('disabled');
             cartBtn[i].disabled = true;
             cartBtn[i].textContent = 'In cart!';
-            // More item
+
+            // Set qty of any item
             let qtySet = document.createElement('ul');
             qtySet.style.marginLeft = '20px'
             let qtyPlus = document.createElement('button');
@@ -107,11 +108,16 @@ function addToCart(){
             let qtyAll = document.createElement('p');
             let qtyAllNum = document.createTextNode('1');
 
+            qtyPlus.style.marginRight = '8px';
+            qtyMinus.style.marginLeft = '8px';
+            qtyAll.style.marginTop = '8px';
+            qtyAll.style.fontWeight = '500';
+
             qtyAll.append(qtyAllNum);
             qtyPlus.append(plus);
             qtyMinus.append(minus);
             qtySet.append(qtyPlus,qtyAll,qtyMinus);
-            newItem.append(qtySet)
+            newItem.append(qtySet);
 
             let qtyCount = 1;
             qtyPlus.addEventListener('click', () => {

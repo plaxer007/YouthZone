@@ -249,12 +249,34 @@ p#btnClose:hover{
     .new-item{
         position: relative;
     }
+    // Btn for delete from cart
     a.closer{
         font-size: 16px;
         font-weight: 600;
         position: absolute;
         right: 5%;
         cursor: pointer;
+        transition: all .3s ease;
+    }
+    a.closer::after{
+        content: 'Delete from cart';
+        width: 0px;
+        height: 100%;
+        background-color: $orange;
+        color: $white-txt;
+        font-size: 10px;
+        display: block;
+        position: absolute;
+        top:0;
+        left: 150%;
+        text-align: center;
+        transition: all .3s ease;
+        opacity: 0;
+        border-radius: 25px;
+    }
+    a.closer:hover::after{
+        width:100px;
+        opacity: 1;
     }
     
     // Site title
@@ -607,6 +629,8 @@ p#btnClose:hover{
         margin-right: 0 !important;
         min-width: 30%
     }
+
+
 
 // RWD
 // RWD

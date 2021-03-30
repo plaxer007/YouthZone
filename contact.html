@@ -7,6 +7,7 @@
     <meta name="HandheldFriendly" content="true">
     <title>Youth Zone - Home</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/contact.css">
     
 </head>
 <body>
@@ -26,8 +27,6 @@
                 <ul class="menu-main">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="shop-now.html">Shop now</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="collection.html">Collection</a></li>
                     <li><a href="media.html">Media</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li class="shop-cart">
@@ -52,7 +51,81 @@
                 <div class="line line3"></div>
             </div>
         </nav>
+
+        <form method="POST" class="contact-form">
+            <h1>Contact Us!</h1>
+            <p>Any time, any question. We are here to help you in all kind of troubles, questions or cooperate. Just feel free to send us a message. We are trying to respond in next 24 hours!</p>
+            <label for="name">Your name</label>
+            <input type="text" id="name">
+
+            <label for="e-mail">Your E-mail</label>
+            <input type="email" id="e-mail">
+
+            <label for="message">Your message</label>
+            <textarea name="" id="message" cols="50" rows="5"></textarea>
+
+            <div class="pp-div">
+                <input type="checkbox" id="pp-check">
+                <label for="pp-check">I accept Privacy Policy. Read more <a href="#" class="green-link">here</a></label>
+            </div>
+            
+            <button class="hero-btn">Send</button>
+        </form>
     </div>
+
+    <!-- Footer full width -->
+    <footer class="footer">
+        <div class="footer-main">
+
+            <div class="logo">
+                <img src="images/logo.svg" alt="" class="">
+            </div>
+
+            <div class="link-list-wrapper flex-box">
+                <div class="list-1 list">
+                    <ul>
+                        <li><a href="#">Discounts</a></li>
+                        <li><a href="#">YouthCard™ </a></li>
+                        <li><a href="#">Youth Story</a></li>
+                        <li><a href="#">Beauty Zone</a></li>
+                    </ul>
+                </div>
+                <div class="list-2 list">
+                    <ul>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Our work culture</a></li>
+                        <li><a href="#">Youth awards</a></li>
+                        <li><a href="#">YouthZone in media</a></li>
+                    </ul>
+                </div>
+                <div class="list-3 list">
+                    <ul>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Your order</a></li>
+                        <li><a href="#">Your account</a></li>
+                    </ul>
+                </div>
+                <div class="list-4 list">
+                    <ul>
+                        <li><a href="#">Cooperate</a></li>
+                        <li><a href="#">Becoma a partner</a></li>
+                        <li><a href="#">Cosmetics</a></li>
+                        <li><a href="#">Youth Zone Lines</a></li>
+                    </ul>
+                </div>
+                <div class="list-5 list">
+                    <ul>
+                        <li><a href="#">Find us</a></li>
+                        <li class="sm-icon"><a href="#"><img src="images/ig.svg" alt="" srcset=""></a></li>
+                        <li class="sm-icon"><a href="#"><img src="images/fb.svg" alt="" srcset=""></li>
+                        <li class="sm-icon"><a href="#"><img src="images/yt.svg" alt="" srcset=""></a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
     <script src="scripts/script.js"></script>
 </body>
 </html>

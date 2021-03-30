@@ -1,0 +1,57 @@
+// Colors 
+$nav-black:#161616;
+$darkgreen:#00332C;
+$yellow: #FAAE2B;
+$white-txt: #fdfdfd;
+$light-bg:rgb(253, 253, 243);
+$orange: #FA5246;
+$pink: #FFA8BA;
+$light-green: #475D5B;
+
+.contact-form input, .contact-form textarea{
+    display: block;
+    border: none;
+    margin: 8px 0px 16px;
+    border-bottom: 2px solid $darkgreen;
+    width: 100%
+}
+.contact-form input:focus, 
+.contact-form textarea:focus{
+    outline: none;
+}
+.contact-form{
+    width:50%;
+    background-color: rgb(255, 255, 255);
+    padding: 5%;
+    margin: auto;
+    margin-bottom: 64px;
+    box-shadow: 2px 2px 8px rgba(51, 51, 51, 0.226);
+}
+.contact-form h1 {
+    text-align: center;
+    font-size: 48px;
+    color: $light-green;
+    margin-bottom: 16px;
+}
+.contact-form p{
+    margin-bottom: 32px;
+}
+.hero-btn:hover {
+    cursor: pointer;
+    margin-left: 5px;
+}
+.hero-btn{
+    transition: all .3s ease;
+    font-size: 16px;
+}
+.pp-div{
+    display: flex;
+}
+#pp-check{
+    width:5% !important
+}
+.green-link{
+    color: $darkgreen;
+    border-bottom: 1px solid $darkgreen;
+    font-weight: 500;
+}
