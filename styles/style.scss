@@ -53,7 +53,6 @@ body{
 .free-shipping p{ 
     text-align: center;
     font-size: 0.9rem;
-    
 }
 .plane {
     margin-right: 10px;
@@ -132,12 +131,14 @@ p#btnClose:hover{
     }
 
     // Navbar top
-    .top-nav,
-    .links ul{
+    .top-nav{
         display: flex;
-            justify-content: space-between;
-            position: relative;
-            align-items: center;
+        justify-content: space-between;
+        position: relative;
+        align-items: center;
+    }
+    .menu-main {
+        display: flex;
     }
     .top-nav {
         margin: 40px 0 80px 0;
@@ -164,42 +165,45 @@ p#btnClose:hover{
     }
     .links li:hover:not(.login-link, .shop-cart)::before{
         width: 100% !important;
-    }
-    
-    .shop-cart-icon {
-        background-color: $darkgreen;
-        display: flex;
-        align-items: center;
-        padding: 8px;
-        border-radius: 100%;
-        margin: 0 20px 0 20px;
-    }
+    } 
     .to-login {
         border: 2px solid $darkgreen;
         padding: 10px 35px;
         border-radius: 23px;
         color: $darkgreen;
     }
-    //Shopping cart
+    // Shopping cart
+    .shop-cart-icon {
+        background-color: $darkgreen ;
+        padding: 10px 8px 4px 8px;
+        border-radius: 50%;
+        margin-left: 16px;
+     }
+    .right-menu{
+        display: flex;
+    }
     .cart{
         display: none;
         position: relative;
+        overflow: hidden;
     }
     .visible-cart{
-        width:400px;
-        min-height: 250px;
+        width:40%;
+        height: 300px;
         background-color: rgb(251, 251, 251);
         display: block;
         position: absolute;
         top: 125%;
         right:0;
-        z-index: 123456789;
+        z-index: 99;
+        overflow-y: scroll;
+        overflow-x: hidden;
         padding: 16px 16px 40px 16px;
         box-shadow: 2px 2px 8px rgba(51, 51, 51, 0.527);
         font-size: 16px !important;
     }
     .visible-cart p{
-        font-size: 16px;
+        font-size: 14px;
         margin-bottom: 8px;
     }
     .close-cart{
@@ -214,22 +218,27 @@ p#btnClose:hover{
         font-weight: 600;
         border: 1px solid $darkgreen;
     }
+    .summary{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
     .checkout-btn{
-        position: absolute;
+        position: sticky;
         right: 20px;
-        bottom: 10px;
+        top: 15px;
         border: 1px solid $darkgreen;
         padding: 6px 12px;
         font-weight: 500;
         font-size: 14px;
-        
     }
     .total {
-        position: absolute;
-        left: 20px;
-        bottom: 10px;
+        position: sticky;
+        top: 10px;
         display: flex;
         align-items: center;
+        font-size: 16px;
+        font-weight: 600;
     }
     .item-counter{
         background-color: $yellow;
@@ -238,8 +247,8 @@ p#btnClose:hover{
         height: 25px;
         border-radius: 50%;
         position: absolute;
-        right: 10px;
-        top: -15px;
+        right: -10px;
+        top: -3px;
         visibility: hidden;
         opacity: 0;
         text-align: center;
@@ -247,13 +256,18 @@ p#btnClose:hover{
     }
     .new-item{
         position: relative;
+        padding-top: 10px;
+    }
+    .new-item ul {
+        display: flex;
+        align-items: center;
     }
     // Btn for delete from cart
     a.closer{
         font-size: 16px;
         font-weight: 600;
         position: absolute;
-        right: 5%;
+        right: 30%;
         cursor: pointer;
         transition: all .3s ease;
     }
@@ -298,7 +312,7 @@ p#btnClose:hover{
         position: absolute;
         right:0;
         top: 10%;
-        
+        width: 40%
     }
     .hero-list{
         position: relative;
@@ -347,11 +361,7 @@ p#btnClose:hover{
     .hero-btn:focus {
         outline: none;
     }
-    .hero-image  {
-        overflow: hidden;
-        position: relative;
-        width: 40%;
-    }
+    
     .hero-img{
         width:80%;
         transition: all 1s ease;
@@ -730,6 +740,9 @@ p#btnClose:hover{
     .shop-cart-icon{
         width: 10%;
     }
+    .visible-cart{
+        width:100%;
+    }
 }
 
 @media (max-width: 992px) {
@@ -743,9 +756,7 @@ p#btnClose:hover{
 
     }
     .visible-cart{
-        position: relative;
-        bottom: 100px;
-        width: 100%
+        width: 70%;
     }
     .hide-mobile {
         display: none;
@@ -792,11 +803,11 @@ p#btnClose:hover{
         font-size: 20px;
     }
     .links ul li:first-child{
-        margin-top: 50%;
+        margin-top: 15%;
     }
     .shop-cart-icon{
         width:38px;
-        margin: auto;
+        margin-right: 24px;
     }
     // Hamburger icon
     .mob-line{

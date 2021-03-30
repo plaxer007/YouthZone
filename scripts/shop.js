@@ -143,7 +143,7 @@ function addToCart(){
             let prodImg = document.createElement('img');
             prodImg.src = `images/prod${i}.jpg`;
             newItem.insertBefore(prodImg,itemDetails);
-            prodImg.style.width = '15%'
+            prodImg.style.width = '10%'
 
             // Add delete button to every new item in cart
             let deleteBtn = document.createElement('a');

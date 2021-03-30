@@ -1,3 +1,13 @@
+
+// Colors 
+$nav-black:#161616;
+$darkgreen:#00332C;
+$yellow: #FAAE2B;
+$white-txt: #fdfdfd;
+$light-bg:rgb(253, 253, 243);
+$orange: #FA5246;
+$pink: #FFA8BA;
+$light-green: #475D5B;
 .media-container{
     display: flex;
     flex-flow: row wrap;
@@ -6,6 +16,7 @@
 }
 .single-card{
     width:30%;
+    margin-bottom: 20px;
 }
 .image-card img{
     width:100%;
@@ -22,7 +33,7 @@
     display: block;
     width: 100%;
     height: 0%;
-    background: rgba(194, 145, 145, 0.418);
+    background: rgba(145, 194, 183, 0.418);
     transition: all .3s ease;
     z-index: 5;
     position: absolute;
@@ -38,7 +49,6 @@
     opacity: 0;
     font-size: 14px;
     transition: all .3s ease;
-    color: #333;
     z-index:6;
     margin-bottom: 0px;
 }
@@ -51,6 +61,7 @@
 }
 .info-card p{
     font-size: 0.95em;
+    color: $white-txt;
 }
 .youth-logo{
     transform: translateY(-100%);
@@ -64,7 +75,7 @@
 
 .image-card:hover::before,
 .image-card:hover img{
-    height: 99%;
+    height: 98.5%;
     border-radius: 25px;
 }
 @media (max-width: 576px){

@@ -166,8 +166,7 @@ p#btnClose:hover {
   margin: auto;
 }
 
-.top-nav,
-.links ul {
+.top-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -178,6 +177,12 @@ p#btnClose:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.menu-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .top-nav {
@@ -212,19 +217,6 @@ p#btnClose:hover {
   width: 100% !important;
 }
 
-.shop-cart-icon {
-  background-color: #00332C;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 8px;
-  border-radius: 100%;
-  margin: 0 20px 0 20px;
-}
-
 .to-login {
   border: 2px solid #00332C;
   padding: 10px 35px;
@@ -232,20 +224,36 @@ p#btnClose:hover {
   color: #00332C;
 }
 
+.shop-cart-icon {
+  background-color: #00332C;
+  padding: 10px 8px 4px 8px;
+  border-radius: 50%;
+  margin-left: 16px;
+}
+
+.right-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .cart {
   display: none;
   position: relative;
+  overflow: hidden;
 }
 
 .visible-cart {
-  width: 400px;
-  min-height: 250px;
+  width: 40%;
+  height: 300px;
   background-color: #fbfbfb;
   display: block;
   position: absolute;
   top: 125%;
   right: 0;
-  z-index: 123456789;
+  z-index: 99;
+  overflow-y: scroll;
+  overflow-x: hidden;
   padding: 16px 16px 40px 16px;
   -webkit-box-shadow: 2px 2px 8px rgba(51, 51, 51, 0.527);
           box-shadow: 2px 2px 8px rgba(51, 51, 51, 0.527);
@@ -253,7 +261,7 @@ p#btnClose:hover {
 }
 
 .visible-cart p {
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: 8px;
 }
 
@@ -270,10 +278,21 @@ p#btnClose:hover {
   border: 1px solid #00332C;
 }
 
+.summary {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .checkout-btn {
-  position: absolute;
+  position: -webkit-sticky;
+  position: sticky;
   right: 20px;
-  bottom: 10px;
+  top: 15px;
   border: 1px solid #00332C;
   padding: 6px 12px;
   font-weight: 500;
@@ -281,15 +300,17 @@ p#btnClose:hover {
 }
 
 .total {
-  position: absolute;
-  left: 20px;
-  bottom: 10px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .item-counter {
@@ -299,8 +320,8 @@ p#btnClose:hover {
   height: 25px;
   border-radius: 50%;
   position: absolute;
-  right: 10px;
-  top: -15px;
+  right: -10px;
+  top: -3px;
   visibility: hidden;
   opacity: 0;
   text-align: center;
@@ -310,13 +331,23 @@ p#btnClose:hover {
 
 .new-item {
   position: relative;
+  padding-top: 10px;
+}
+
+.new-item ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 a.closer {
   font-size: 16px;
   font-weight: 600;
   position: absolute;
-  right: 5%;
+  right: 30%;
   cursor: pointer;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
@@ -366,6 +397,7 @@ a.closer:hover::after {
   position: absolute;
   right: 0;
   top: 10%;
+  width: 40%;
 }
 
 .hero-list {
@@ -420,12 +452,6 @@ a.closer:hover::after {
 
 .hero-btn:focus {
   outline: none;
-}
-
-.hero-image {
-  overflow: hidden;
-  position: relative;
-  width: 40%;
 }
 
 .hero-img {
@@ -898,6 +924,9 @@ p.nl-note {
   .shop-cart-icon {
     width: 10%;
   }
+  .visible-cart {
+    width: 100%;
+  }
 }
 
 @media (max-width: 992px) {
@@ -909,9 +938,7 @@ p.nl-note {
     z-index: 999 !important;
   }
   .visible-cart {
-    position: relative;
-    bottom: 100px;
-    width: 100%;
+    width: 70%;
   }
   .hide-mobile {
     display: none;
@@ -960,11 +987,11 @@ p.nl-note {
     font-size: 20px;
   }
   .links ul li:first-child {
-    margin-top: 50%;
+    margin-top: 15%;
   }
   .shop-cart-icon {
     width: 38px;
-    margin: auto;
+    margin-right: 24px;
   }
   .mob-line {
     width: 25px;
