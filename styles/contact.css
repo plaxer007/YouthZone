@@ -58,4 +58,10 @@
   border-bottom: 1px solid #00332C;
   font-weight: 500;
 }
+
+@media (max-width: 992px) {
+  .contact-form {
+    width: 90%;
+  }
+}
 /*# sourceMappingURL=contact.css.map */

@@ -55,3 +55,9 @@ $light-green: #475D5B;
     border-bottom: 1px solid $darkgreen;
     font-weight: 500;
 }
+
+@media (max-width: 992px){
+    .contact-form {
+        width: 90%;
+    }
+}
