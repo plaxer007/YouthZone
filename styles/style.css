@@ -839,6 +839,10 @@ p.nl-note {
   .mobile {
     display: block  !important;
   }
+  .visible-cart {
+    width: 100vw !important;
+    margin-right: -12% !important;
+  }
   .hero-wrapper, .hero-content {
     width: 100%;
   }

@@ -657,6 +657,11 @@ p#btnClose:hover{
     .mobile {
         display: block  !important;
     }
+    // Cart
+    .visible-cart{
+        width: 100vw !important;
+        margin-right: -12% !important;
+    }
     // Hero content
     .hero-wrapper,.hero-content {
         width: 100%;
